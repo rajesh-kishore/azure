@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.6'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+        id "com.microsoft.azure.azurewebapp" version "1.2.0"
 }
 
 group = 'com.kishore.azure'
@@ -11,6 +12,20 @@ sourceCompatibility = '1.8'
 repositories {
 	mavenCentral()
 }
+
+
+azurewebapp {
+    subscription = '1ea21559-0964-4e87-acca-a3c242a1c759'
+    resourceGroup = 'trailrkrg'
+    appName = 'trialrkwebapp' // name of app service
+    pricingTier = 'F1'  // for free tier
+    region = 'Central US' 
+    runtime {
+        os = 'Linux' 
+        javaVersion = 'Java 8'
+    }
+}
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
