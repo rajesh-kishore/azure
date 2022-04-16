@@ -19,7 +19,7 @@ public class DemoApplication {
        @RequestMapping("/")
        @ResponseBody
        String home() {
-          return "Welcome to Azure";
+          return "Welcome to Azure..";
        }
 
 	public static void main(String[] args) {
